@@ -1,0 +1,10 @@
+{
+  "name": "TerminalCV",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "hugo --config exampleSite/config.yml --theme \"\""
+  },
+  "devDependencies": {
+    "hugo-bin": "^0.69.0"
+  }
+}
