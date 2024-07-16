@@ -5,18 +5,12 @@ jQuery(document).ready(function($) {
 
     var commands = {
         help: "shows help",
-        less: "Use less as output method",
         whois: "list basic details",
         social: "list social networks",
         work: "list work experience",
         education: "list education",
         skills: "list core skills",
-        softskills: "list soft skills",
-        languages: "list spoken languages",
         projects: "list projects",
-        {{ if .Site.Params.certifications }} 
-            certifications: "list certifications",
-        {{ end }}
         {{ if .Site.Params.startxLocation }}
             startx: "starts graphical environment",
         {{ end }}
@@ -25,9 +19,6 @@ jQuery(document).ready(function($) {
         {{ end }}
         {{ if not .Site.Params.Source }}
             source: "shows details about template powering this website",
-        {{ end }}
-        {{ if .Site.Params.version }}
-            version: "Current version",
         {{ end }}
         {{ if .Site.Params.exitLocation }}
             exit: "exit the terminal",
@@ -62,7 +53,7 @@ jQuery(document).ready(function($) {
 
     var help = '\n[[b;white;]usage:]\n' +
                 '\n <command> - execute the command\n' +
-                ' less <command> - use less to display the output\n\n' +
+
                 '\n[[b;white;]Available commands:]\n' + 
                commandsHelp();
 
@@ -179,12 +170,7 @@ jQuery(document).ready(function($) {
     var skills = [
     {{ with .Site.Params.skills.details }}
         {{ range . }}
-            '[[b;{{ .color | default "grey" }};]{{ .name }}:]\n' +
-            progressBar({{ .percentage }}) +
-            '{{ .percentage }}' + '%\n' +
-            {{ if .description }}
-            '{{ .description }}\n' +
-            {{ end }}
+            '[[b;{{ .color | default "white" }};]{{ .name }}]\n' +
             '\r',
         {{ end }}
     {{ end }}
@@ -235,8 +221,8 @@ jQuery(document).ready(function($) {
                   '|      |       |       |   \n' +
                   '|      |       |       |   \n' +
                   '|______|_______|_______|   \n' +
-                  '[[;red;]May the source be with you]\n' +
-                  '[[;grey;]https://github.com/coolapso/hugo-theme-terminalcv\n';
+                  "[[;red;]In the end there are only 0's and 1's]\n" +
+                  '[[;grey;]https://github.com/SaiShankar93\n';
 
     var all = [ 
         whois,
