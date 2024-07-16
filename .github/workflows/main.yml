@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ main, gh-pages ]
   workflow_dispatch:
 
 jobs:
